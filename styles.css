@@ -1,0 +1,134 @@
+body {
+  background-color: #ffffff; 
+  
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  
+  background-size: 40px 40px; 
+}
+
+#welcome {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 100px;
+
+    border: 1px solid black;
+    border-radius: 20px;
+    
+    width: 500px;
+    height: 250px;
+
+    background-color: white;
+
+    align-items: center;
+}
+
+#welcomeheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 35px;
+
+    background-color: black;
+    color: white;
+
+    border-radius: 19px 19px 0 0;
+
+    width: 500px;
+
+    font-size: large;
+
+    user-select: none;
+    cursor: grab;
+}
+
+#headertext {
+    display: flex;
+    
+    font-size: larger;
+
+    margin-left: 10px;
+}
+
+#welcomeclose {
+    display: flex;
+    
+    margin-right: 10px;
+
+    font-size: large;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+#welcometext {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+}
+
+#taskbar {
+    display: flex;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: white;
+
+    height: 50px;
+
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+}
+
+.container {
+    display: flex;
+
+    flex-direction: column;
+    gap: 2px;
+
+    margin-left: auto;
+    padding-right: 20px;
+
+    font-size: medium;
+
+    align-items: center;
+    padding-top: 4px;
+}
+
+#windows {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+
+    display: grid;
+    place-items: center;
+
+    font-size: large;
+}
+
+#welcomeopen {
+    border: 2px solid;
+    border-radius: 16px;
+
+    width: fit-content;
+    height: fit-content;
+
+    padding: 3px 5px 3px 5px;
+
+    background-color: aliceblue;
+
+    cursor: pointer;
+}
