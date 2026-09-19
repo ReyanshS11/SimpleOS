@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+    
     <head>
         <meta charset="UTF-8">
         <title>SimpleOS</title>
@@ -19,6 +20,37 @@
             </div>
 
             <h1 id="welcometext" class="windowtext">This is a simple OS.</h1>
+
+        </div>
+
+        <div id="notes" class="window">
+
+            <div id="notesheader" class="windowheader">
+                <div id="notesheadertext" class="windowheadertext">Notes</div>
+
+                <div id="notesclose" class="windowclose">X</div>
+            </div>
+
+            <div id="notesarea">
+                <div id="sidebar"></div>
+                <div id="notestext" class="windowtext" style="overflow-y: scroll;"></div>
+            </div>
+        </div>
+
+        <div id="weather" class="window">
+
+            <div id="weatherheader" class="windowheader">
+                <div id="weatherheadertext" class="windowheadertext">Weather</div>
+
+                <div id="weatherclose" class="windowclose">X</div>
+            </div>
+
+            <img id="weatherimage" src="Assets/sun-solid-full.svg" style="width: 100px; height: 100px;">
+            <h2 id="weathertext" class="windowtext">You need to allow this site to see your location</h2>
+            <br>
+            <h3 id="temperature">Temperature: N/A</h3>
+            <h3 id="precipitation">Precipitation: N/A</h3>
+
         </div>
 
         <div id="taskbar">
@@ -29,6 +61,18 @@
             <div class="container">
                 <span id="time">10:10 PM</span>
                 <span id="date">11/11/2026</span>
+            </div>
+        </div>
+
+        <div id="desktopApps" style="padding-top: 64px; padding-left: 21px;">
+            <div class="app" id="notesopen">
+                <img src="Assets/notes.svg" style="width: 50px; height: 50px; border: 2px solid black; border-radius: 16px; padding: 5px;">
+                <p style="margin: 0px; color: black; padding-left: 12px;">Notes</p>
+            </div>
+
+            <div class="app" id="weatheropen">
+                <img src="Assets/sun-solid-full.svg" style="width: 50px; height: 50px; border: 2px solid black; border-radius: 16px; padding: 5px;">
+                <p style="margin: 0px; color: black; padding-left: 5px;">Weather</p>
             </div>
         </div>
 
