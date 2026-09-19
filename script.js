@@ -214,35 +214,12 @@ function handleWindowTap(element) {
     biggestIndex++;
     element.style.zIndex = biggestIndex;
     topBar.style.zIndex = biggestIndex + 1;
-    deselectIcon(selectedIcon);
-}
-
-var selectedIcon = undefined;
-
-function selectIcon(element) {
-    element.classList.add("selected");
-    selectedIcon = element;
-}
-
-function deselectIcon(element) {
-    element.classList.remove("selected");
-    selectedIcon = undefined;
-}
-
-function handleIconTap(element) {
-    if (element.classList.contains("selected")) {
-        deselectIcon(element);
-        openWindow(window);
-    }
-    else {
-        selectIcon(element);
-    }
 }
 
 var content = [
     {
         title: "Welcome",
-        date: "09/19/2026",
+        date: `${new Date().toLocaleDateString()}`,
         content: `
             <p contenteditable="True">
                 <span contenteditable="true">These are some simple notes.
@@ -260,10 +237,9 @@ var content = [
             </p>
         `
     },
-
     {
         title: "To-Do",
-        date: "09/21/2026",
+        date: `${new Date().toLocaleDateString()}`,
         content: `
             <p contenteditable="True">
                 <span contenteditable="true">This is a To-Do list.
@@ -294,7 +270,7 @@ function addToSideBar(index) {
     var newDiv = document.createElement("div");
 
     newDiv.innerHTML = `
-        <p style="margin: 0px;">
+        <p style="margin: 0px;" contenteditable="True">
             ${note.title}
         </p>
         <p style="font-size: 12px; margin: 0px;">
@@ -311,6 +287,30 @@ function addToSideBar(index) {
     sidebar.appendChild(newDiv);
 }
 
+var currentHighestIndex = 0;
+
 for (let i = 0; i < content.length; i++) {
-    addToSideBar(i)
+    addToSideBar(i);
+
+    currentHighestIndex = i;
+}
+
+function newNote() {
+    content.push(
+        {
+        title: "My Note",
+        date: `${new Date().toLocaleDateString()}`,
+        content: `
+            <p contenteditable="True">
+                <span contenteditable="true">Write your thoughts down here.
+                </span>
+            </p>
+            `
+        }
+    )
+
+    currentHighestIndex += 1;
+    addToSideBar(currentHighestIndex);
+
+    console.log("added note");
 }

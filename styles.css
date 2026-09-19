@@ -149,6 +149,17 @@ body {
     align-items: center;
 }
 
+#sidebar img {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 16px;
+}
+
+#sidebar img:hover {
+    background-color: rgba(26, 113, 234, 0.733);
+}
+
 #sidebar div {
     cursor: pointer;
 
