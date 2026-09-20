@@ -4,3 +4,8 @@ Simple OS is a very simple OS, perhaps too simple.
 
 ## Try it!
 You can try out SimpleOS here: [SimpleOS](https://reyanshs11.github.io/SimpleOS)
+
+## Features
+* Date and time
+* Notes app
+* Weather app
