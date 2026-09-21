@@ -128,6 +128,80 @@ body {
     width: 300px;
 }
 
+#timer {
+    display: none;
+
+    top: 400px;
+    left: 400px;
+
+    width: 450px;
+    height: 250px;
+
+    align-items: center;
+}
+
+#timerheader {
+    width: 450px;
+}
+
+#timertext {
+    padding-top: 10px;
+    font-size: xxx-large;
+}
+
+#timercontrols {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    padding-bottom: 25px;
+}
+
+#timercontrols button{
+    background-color: cornflowerblue;
+    width: 40px;
+
+    border-radius: 16px;
+
+    padding: 5px;
+}
+
+#timerbuttons {
+    display: flex;
+    flex-direction: row;
+
+    gap: 50px;
+
+    padding-bottom: 10px;
+}
+
+#starttimer {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50px;
+
+    background-color: lightgreen;
+}
+
+#stoptimer {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50px;
+
+    background-color: red;
+}
+
+#resettimer {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50px;
+
+    background-color: yellow;
+}
+
 #sidebar {
     display: flex;
     flex-direction: column;

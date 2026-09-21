@@ -43,6 +43,7 @@ function errorCallback(error) {
 dragElement(document.getElementById("welcome"));
 dragElement(document.querySelector("#notes"));
 dragElement(document.querySelector("#weather"));
+dragElement(document.querySelector("#timer"));
 
 function dragElement(element) {
     var initialX = 0;
@@ -119,6 +120,19 @@ notesScreenClose.addEventListener("click", function() {
 
 notesScreenOpen.addEventListener("click", function() {
     openWindow(notesScreen);
+});
+
+var timerScreen = document.querySelector("#timer");
+
+var timerScreenClose = document.querySelector("#timerclose");
+var timerScreenOpen = document.querySelector("#timeropen");
+
+timerScreenClose.addEventListener("click", function() {
+    closeWindow(timerScreen);
+});
+
+timerScreenOpen.addEventListener("click", function() {
+    openWindow(timerScreen);
 });
 
 var weatherScreen = document.querySelector("#weather");
@@ -314,3 +328,124 @@ function newNote() {
 
     console.log("added note");
 }
+
+let timerInterval;
+let isRunning = false;
+
+let minutesRemaining = parseInt(document.getElementById("timertext").textContent.slice(0, 2), 10);
+let secondsRemaining = parseInt(document.getElementById("timertext").textContent.slice(3, 5), 10);
+let millisecondsRemaining = parseInt(document.getElementById("timertext").textContent.slice(6), 10);
+
+let initialTime = minutesRemaining * 60000 + secondsRemaining * 1000 + millisecondsRemaining;
+let timeRemaining = initialTime;
+
+function addOneMin() {
+    if (isRunning)
+    {
+        return;
+    }
+
+    minutesRemaining += 1;
+
+    timeRemaining = minutesRemaining * 60000 + secondsRemaining * 1000 + millisecondsRemaining;
+    updateDisplay();
+}
+
+function addOneMin() {
+    if (isRunning) return;
+
+    timeRemaining += 60000;
+    updateDisplay();
+}
+
+function subOneMin() {
+    if (isRunning) return;
+
+    timeRemaining = Math.max(0, timeRemaining - 60000);
+    updateDisplay();
+}
+
+function addTenMin() {
+    if (isRunning) return;
+
+    timeRemaining += 600000;
+    updateDisplay();
+}
+
+function subTenMin() {
+    if (isRunning) return;
+
+    timeRemaining = Math.max(0, timeRemaining - 600000);
+    updateDisplay();
+}
+
+function addTenSec() {
+    if (isRunning) return;
+
+    timeRemaining += 10000;
+    updateDisplay();
+}
+
+function subTenSec() {
+    if (isRunning) return;
+
+    timeRemaining = Math.max(0, timeRemaining - 10000);
+    updateDisplay();
+}
+
+function updateDisplay() {
+    let minutes = Math.floor(timeRemaining / 60000);
+    let seconds = Math.floor((timeRemaining % 60000) / 1000);
+    let milliseconds = timeRemaining % 1000;
+
+    let mm = String(minutes).padStart(2, '0');
+    let ss = String(seconds).padStart(2, '0');
+    let mmm = String(milliseconds).padStart(3, '0');
+
+    document.getElementById("timertext").textContent = `${mm}:${ss}:${mmm}`;
+}
+
+function startTimer() {
+    if (isRunning) {
+        return;
+    }
+
+    isRunning = true;
+
+    let lastTimeStamp = performance.now();
+
+    timerInterval = setInterval(() => {
+        let now = performance.now();
+        let deltaTime = Math.round(now - lastTimeStamp);
+        lastTimeStamp = now;
+
+        if (timeRemaining > 0) {
+            timeRemaining -= deltaTime;
+
+            if (timeRemaining < 0)
+            {
+                timeRemaining = 0;
+            }
+            updateDisplay();
+        }
+        else {
+            clearInterval(timerInterval);
+            isRunning = false;
+            updateDisplay();
+        }
+    }, 10);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+    isRunning = false;
+}
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    isRunning = false;
+    timeRemaining = initialTime;
+    updateDisplay();
+}
+
+updateDisplay();

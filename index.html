@@ -56,6 +56,43 @@
 
         </div>
 
+        <div id="timer" class="window">
+
+            <div id="timerheader" class="windowheader">
+                <div id="timerheadertext" class="windowheadertext">Timer</div>
+
+                <div id="timerclose" class="windowclose">X</div>
+            </div>
+
+            <div id="timertext" class="windowtext">00:00:000</div>
+
+            <div id="timercontrols">
+
+                <div id="onemin">
+                    <button onclick="addOneMin()">+1 min</button>
+                    <button onclick="subOneMin()">-1 min</button>
+                </div>
+
+                <div id="tenmin">
+                    <button onclick="addTenMin()">+10 min</button>
+                    <button onclick="subTenMin()">-10 min</button>
+                </div>
+
+                <div id="tensec">
+                    <button onclick="addTenSec()">+10 sec</button>
+                    <button onclick="subTenSec()">-10 sec</button>
+                </div>
+
+            </div>
+
+            <div id="timerbuttons">
+                <button id="starttimer" onclick="startTimer()">Start</button>
+                <button id="stoptimer" onclick="stopTimer()">Stop</button>
+                <button id="resettimer" onclick="resetTimer()">Reset</button>
+            </div>
+
+        </div>
+
         <div id="taskbar">
             <div id="windows">
                 <p id="welcomeopen" class="windowopen">SimpleOS</p>
@@ -76,6 +113,11 @@
             <div class="app" id="weatheropen">
                 <img src="Assets/sun-solid-full.svg" style="width: 50px; height: 50px; border: 2px solid black; border-radius: 16px; padding: 5px;">
                 <p style="margin: 0px; color: black; padding-left: 5px;">Weather</p>
+            </div>
+
+            <div class="app" id="timeropen">
+                <img src="Assets/stopwatch-solid-full.svg" style="width: 50px; height: 50px; border: 2px solid black; border-radius: 16px; padding: 5px;">
+                <p style="margin: 0px; color: black; padding-left: 12px;">Timer</p>
             </div>
         </div>
 
