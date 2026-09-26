@@ -1,0 +1,6 @@
+Games app (embed games)
+Settings app (background images, maybe other stuff)
+Maps app (embed Google Maps)
+RNG
+Browser (embed Google) ***
+TV

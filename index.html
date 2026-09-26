@@ -93,6 +93,38 @@
 
         </div>
 
+        <div id="browser" class="window">
+
+            <div id="browserheader" class="windowheader">
+                <div id="browserheadertext" class="windowheadertext">Browser</div>
+
+                <div id="browserclose" class="windowclose">X</div>
+            </div>
+
+            <iframe src="https://www.google.com/search?igu=1" title="Google" width="800" height="500"></iframe>
+
+        </div>
+
+        <div id="settings" class="window">
+
+            <div id="settingsheader" class="windowheader">
+                <div id="settingsheadertext" class="windowheadertext">Settings</div>
+
+                <div id="settingsclose" class="windowclose">X</div>
+            </div>
+
+            <h2 id="settingstext" class="windowtext">Choose a Background Color</h1>
+
+            <div id="backgroundcolors">
+                <button class="backgroundcolor" id="white" onclick="changeBackgroundColorToWhite()"></button>
+                <button class="backgroundcolor" id="gray" onclick="changeBackgroundColorToGray()"></button>
+                <button class="backgroundcolor" id="lightblue" onclick="changeBackgroundColorToLightBlue()"></button>
+                <button class="backgroundcolor" id="lightgreen" onclick="changeBackgroundColorToLightGreen()"></button>
+                <button class="backgroundcolor" id="tomato" onclick="changeBackgroundColorToTomato()"></button>
+            </div>
+
+        </div>
+
         <div id="taskbar">
             <div id="windows">
                 <p id="welcomeopen" class="windowopen">SimpleOS</p>
@@ -118,6 +150,16 @@
             <div class="app" id="timeropen">
                 <img src="Assets/stopwatch-solid-full.svg" style="width: 50px; height: 50px; border: 2px solid black; border-radius: 16px; padding: 5px;">
                 <p style="margin: 0px; color: black; padding-left: 12px;">Timer</p>
+            </div>
+
+            <div class="app" id="browseropen">
+                <img src="Assets/chrome-brands-solid-full.svg" style="width: 50px; height: 50px; border: 2px solid black; border-radius: 16px; padding: 5px;">
+                <p style="margin: 0px; color: black; padding-left: 5px;">Browser</p>
+            </div>
+
+            <div class="app" id="settingsopen">
+                <img src="Assets/gear-solid-full.svg" style="width: 50px; height: 50px; border: 2px solid black; border-radius: 16px; padding: 5px;">
+                <p style="margin: 0px; color: black; padding-left: 4px;">Settings</p>
             </div>
         </div>
 

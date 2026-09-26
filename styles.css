@@ -1,5 +1,5 @@
 body {
-  background-color: #ffffff; 
+  background-color: white; 
   
   background-image:
     linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
@@ -250,6 +250,71 @@ body {
 
 #sidebar div:hover {
     background-color: whitesmoke;
+}
+
+#browser {
+    display: none;
+
+    top: 140px;
+    left: 370px;
+
+    width: 800px;
+    height: 500px;
+
+    align-items: center;
+}
+
+#browserheader {
+    width: 800px;
+}
+
+#settings {
+    display: none;
+
+    align-items: center;
+}
+
+#settingstext {
+    padding-top: 50px;
+}
+
+#backgroundcolors {
+    display: flex;
+    gap: 15px;
+
+    padding-bottom: 60px;
+
+    justify-content: center;
+}
+
+.backgroundcolor {
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid black;
+    border-radius: 16px;
+
+    cursor: pointer;
+}
+
+#white {
+    background-color: white;
+}
+
+#gray {
+    background-color: lightgray;
+}
+
+#lightblue {
+    background-color: lightblue;
+}
+
+#lightgreen {
+    background-color: lightgreen;
+}
+
+#tomato {
+    background-color: tomato;
 }
 
 #taskbar {

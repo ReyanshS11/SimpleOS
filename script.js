@@ -44,6 +44,8 @@ dragElement(document.getElementById("welcome"));
 dragElement(document.querySelector("#notes"));
 dragElement(document.querySelector("#weather"));
 dragElement(document.querySelector("#timer"));
+dragElement(document.querySelector("#browser"));
+dragElement(document.querySelector("#settings"));
 
 function dragElement(element) {
     var initialX = 0;
@@ -133,6 +135,32 @@ timerScreenClose.addEventListener("click", function() {
 
 timerScreenOpen.addEventListener("click", function() {
     openWindow(timerScreen);
+});
+
+var browserScreen = document.querySelector("#browser");
+
+var browserScreenClose = document.querySelector("#browserclose");
+var browserScreenOpen = document.querySelector("#browseropen");
+
+browserScreenClose.addEventListener("click", function() {
+    closeWindow(browserScreen);
+});
+
+browserScreenOpen.addEventListener("click", function() {
+    openWindow(browserScreen);
+});
+
+var settingsScreen = document.querySelector("#settings");
+
+var settingsScreenClose = document.querySelector("#settingsclose");
+var settingsScreenOpen = document.querySelector("#settingsopen");
+
+settingsScreenClose.addEventListener("click", function() {
+    closeWindow(settingsScreen);
+});
+
+settingsScreenOpen.addEventListener("click", function() {
+    openWindow(settingsScreen);
 });
 
 var weatherScreen = document.querySelector("#weather");
@@ -449,3 +477,23 @@ function resetTimer() {
 }
 
 updateDisplay();
+
+function changeBackgroundColorToWhite() {
+    document.body.style.backgroundColor = "white";
+}
+
+function changeBackgroundColorToGray() {
+    document.body.style.backgroundColor = "lightgray";
+}
+
+function changeBackgroundColorToLightBlue() {
+    document.body.style.backgroundColor = "lightblue";
+}
+
+function changeBackgroundColorToLightGreen() {
+    document.body.style.backgroundColor = "lightgreen";
+}
+
+function changeBackgroundColorToTomato() {
+    document.body.style.backgroundColor = "tomato";
+}
